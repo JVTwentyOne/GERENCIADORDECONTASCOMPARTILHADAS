@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Gerenciador {
     private final List<House> houses;
 
@@ -31,6 +32,32 @@ public class Gerenciador {
 
         return null;
     }
+
+    public boolean isUserExists(String userName, String email) {
+        for (House house : houses) {
+            for (User user : house.getUsers()) {
+                if (user.getName().equalsIgnoreCase(userName) || user.getEmail().equalsIgnoreCase(email)) {
+                    return true; // Retorna true se encontrar duplicado
+                }
+            }
+        }
+        return false; // Retorna false se não encontrar
+    }
+
+    public void registerUser(User user) {
+        if (user == null) {
+            throw new IllegalArgumentException("Usuário não pode ser nulo.");
+        }
+        // Adiciona o usuário na primeira casa ou cria uma casa padrão para novos usuários
+        if (houses.isEmpty()) {
+            House defaultHouse = new House();
+            defaultHouse.addUser(user);
+            houses.add(defaultHouse);
+        } else {
+            houses.get(0).addUser(user); // Adiciona o usuário na primeira casa
+        }
+    }
+    
 
     public void showHousesForUser(String userName) {
         if (userName == null) {

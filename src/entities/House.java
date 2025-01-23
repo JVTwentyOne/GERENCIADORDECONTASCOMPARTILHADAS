@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+
 class House {
     private final String name; // Nome da república
     private final List<Account> accounts;

@@ -3,6 +3,7 @@ public class UserPayment {
     private double amountDue;
     private double amountPaid;
 
+    
     public UserPayment(User user, double amountDue) {
         if (user == null) {
             throw new IllegalArgumentException("Usuário não pode ser nulo.");

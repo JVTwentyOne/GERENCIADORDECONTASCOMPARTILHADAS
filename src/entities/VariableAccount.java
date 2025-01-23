@@ -1,4 +1,6 @@
 // VariableAccount class
+package entities;
+
 class VariableAccount extends Account {
     public VariableAccount(String title, String description) {
         super(title, description);

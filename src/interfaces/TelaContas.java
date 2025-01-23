@@ -1,5 +1,6 @@
 package interfaces;
 
+import entities.Gerenciador;
 import java.util.Scanner;
 
 public class TelaContas {

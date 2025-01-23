@@ -1,6 +1,7 @@
 package interfaces;
 
 import java.util.Scanner;
+import entities.Gerenciador;
 
 public class TelaHome {
 
@@ -29,7 +30,7 @@ public class TelaHome {
                 telaRelatorios.exibir();
                 break;
             case 2:
-                TelaContas telaContas = new TelaContas();
+                TelaContas telaContas = new TelaContas(gerenciador);
                 scanner.close();
                 telaContas.exibir();
                 break;

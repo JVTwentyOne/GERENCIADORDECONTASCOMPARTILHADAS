@@ -1,3 +1,4 @@
+package entities;
 // FixedAccount class
 class FixedAccount extends Account {
     public FixedAccount(String title, String description) {

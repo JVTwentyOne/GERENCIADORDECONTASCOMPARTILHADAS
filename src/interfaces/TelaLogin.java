@@ -1,6 +1,6 @@
 package interfaces;
+import entities.Gerenciador;
 
-import src.Gerenciador;
 import java.util.Scanner;
 
 public class TelaLogin {

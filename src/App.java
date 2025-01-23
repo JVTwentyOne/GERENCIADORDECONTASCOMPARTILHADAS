@@ -1,4 +1,5 @@
 import interfaces.TelaInicial;
+import entities.Gerenciador;
 
 public class App {
 

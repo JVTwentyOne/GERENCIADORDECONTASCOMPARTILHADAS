@@ -1,4 +1,5 @@
 package interfaces;
+import entities.Gerenciador;
 
 import java.util.Scanner;
 
@@ -32,6 +33,9 @@ public class TelaInicial {
                     break;
                 case 2:
                     System.out.println("Função de cadastro ainda não implementada.");
+                    TelaCadastro telaCadastro = new TelaCadastro(gerenciador);
+                    telaCadastro.exibir();
+                    continuar = false; // Após o login, o menu é encerrado
                     break;
                 case 3:
                     System.out.println("Encerrando o programa.");

@@ -1,3 +1,4 @@
+package entities;
 // ExtraordinaryAccount class
 class ExtraordinaryAccount extends Account {
     public ExtraordinaryAccount(String title, String description) {

@@ -1,3 +1,5 @@
+package entities;
+
 public class UserPayment {
     private final User user;
     private double amountDue;
@@ -32,17 +34,13 @@ public class UserPayment {
             throw new IllegalArgumentException("O valor pago deve ser maior que zero.");
         }
         this.amountPaid += amountPaid;
-        this.amountDue = Math.max(0.0, this.amountDue - amountPaid); // Garante que `amountDue` nunca seja negativo
-    }
-
-    public boolean isFullyPaid() {
-        return amountDue == 0.0;
+        this.amountDue = Math.max(0.0, this.amountDue - amountPaid);
     }
 
     @Override
     public String toString() {
         return "UserPayment{" +
-                "user=" + user.getName() +
+                "user=" + user +
                 ", amountDue=" + amountDue +
                 ", amountPaid=" + amountPaid +
                 '}';

@@ -7,9 +7,16 @@ import java.util.List;
 public class Gerenciador {
     private final List<House> houses;
     private static List<User> usuarios = new ArrayList<>();
+    private static List<House> republicas = new ArrayList<>();
 
     public Gerenciador() {
         this.houses = new ArrayList<>();
+    }
+
+    public static void cadastrarRepublica(String nome, String endereco) {
+        House novaRepublica = new House(nome, endereco);
+        republicas.add(novaRepublica);
+        // Você pode incluir lógica de persistência aqui, se necessário.
     }
 
     public static void cadastrarUsuario(User user) {

@@ -5,10 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 class House {
-    private final List<Account> accounts;
-    private final List<User> users;
+    private List<Account> accounts;
+    private List<User> users;
+    private String nome;
+    private String endereco;
 
-    public House() {
+    public House(String nome, String endereco) {
+        this.nome = nome;
+        this.endereco = endereco;
         this.accounts = new ArrayList<>();
         this.users = new ArrayList<>();
     }

@@ -2,7 +2,14 @@ package interfaces;
 
 import java.util.Scanner;
 
+import entities.Gerenciador;
+
 public class TelaRepublicas {
+    private final Gerenciador gerenciador;
+
+    public TelaRepublicas(Gerenciador gerenciador) {
+        this.gerenciador = gerenciador;
+    }
 
     public void exibir() {
         Scanner scanner = new Scanner(System.in);
@@ -15,31 +22,30 @@ public class TelaRepublicas {
         System.out.println("6- Sair e fechar programa");
 
         int opcao = scanner.nextInt();
+        scanner.nextLine(); // Limpa o buffer
+
         switch (opcao) {
             case 1:
-                scanner.close();
+                TelaCadastroRepublica telaCadastroRepublica = new TelaCadastroRepublica(gerenciador);
+                telaCadastroRepublica.exibir();
             case 2:
-                scanner.close();
+                break;
             case 3:
-                scanner.close();
+                break;
             case 4:
                 System.out.println("Função ainda não implementada.");
-                scanner.close();
                 exibir();
                 break;
             case 5:
-                TelaHome telaHome = new TelaHome("Usuário");
-                scanner.close();
+                TelaHome telaHome = new TelaHome("Usuário", gerenciador);
                 telaHome.exibir();
                 break;
             case 6:
                 System.out.println("Encerrando o programa.");
-                scanner.close();
                 System.exit(0);
                 break;
             default:
                 System.out.println("Opção inválida!");
-                scanner.close();
                 exibir();
         }
     }

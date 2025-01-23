@@ -26,32 +26,26 @@ public class TelaHome {
         switch (opcao) {
             case 1:
                 TelaRelatorios telaRelatorios = new TelaRelatorios();
-                scanner.close();
                 telaRelatorios.exibir();
                 break;
             case 2:
                 TelaContas telaContas = new TelaContas(gerenciador);
-                scanner.close();
                 telaContas.exibir();
                 break;
             case 3:
-                TelaRepublicas telaRepublicas = new TelaRepublicas();
-                scanner.close();
+                TelaRepublicas telaRepublicas = new TelaRepublicas(gerenciador);
                 telaRepublicas.exibir();
                 break;
             case 4:
                 TelaInicial telaInicial = new TelaInicial(gerenciador);
-                scanner.close();
                 telaInicial.exibir();
                 break;
             case 5:
                 System.out.println("Encerrando o programa.");
-                scanner.close();
                 System.exit(0);
                 break;
             default:
                 System.out.println("Opção inválida!");
-                scanner.close();
                 exibir();
         }
     }

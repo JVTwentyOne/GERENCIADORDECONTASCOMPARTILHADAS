@@ -1,4 +1,3 @@
-// House class
 package entities;
 
 import java.util.ArrayList;
@@ -17,7 +16,6 @@ class House {
         this.users = new ArrayList<>();
     }
 
-    // Method to add an account
     public void addAccount(Account account) {
         if (account == null) {
             throw new IllegalArgumentException("Account cannot be null.");
@@ -25,7 +23,6 @@ class House {
         this.accounts.add(account);
     }
 
-    // Method to add a user
     public void addUser(User user) {
         if (user == null) {
             throw new IllegalArgumentException("User cannot be null.");
@@ -33,7 +30,6 @@ class House {
         this.users.add(user);
     }
 
-    // Accessor methods
     public List<Account> getAccounts() {
         return new ArrayList<>(accounts); // Returns a copy of the list
     }

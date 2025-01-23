@@ -32,13 +32,17 @@ public class UserPayment {
             throw new IllegalArgumentException("O valor pago deve ser maior que zero.");
         }
         this.amountPaid += amountPaid;
-        this.amountDue = Math.max(0.0, this.amountDue - amountPaid);
+        this.amountDue = Math.max(0.0, this.amountDue - amountPaid); // Garante que `amountDue` nunca seja negativo
+    }
+
+    public boolean isFullyPaid() {
+        return amountDue == 0.0;
     }
 
     @Override
     public String toString() {
         return "UserPayment{" +
-                "user=" + user +
+                "user=" + user.getName() +
                 ", amountDue=" + amountDue +
                 ", amountPaid=" + amountPaid +
                 '}';

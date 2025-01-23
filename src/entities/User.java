@@ -1,27 +1,21 @@
+package entities;
+
 public class User {
-    private String id;
     private String name;
     private String email;
     private String password;
     private String phone;
+    private String userName;
 
     public User() {
     }
 
-    public User(String id, String name, String email, String password, String phone) {
-        this.id = id;
+    public User(String name, String email, String password, String phone, String userName) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.phone = phone;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+        this.userName = userName;
     }
 
     public String getName() {
@@ -56,14 +50,22 @@ public class User {
         this.phone = phone;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", phone='" + phone + '\'' +
+                ", userName='" + userName + '\'' +
                 '}';
     }
 }

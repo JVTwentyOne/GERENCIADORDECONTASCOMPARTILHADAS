@@ -1,8 +1,15 @@
 package interfaces;
 
 import java.util.Scanner;
+import entities.Gerenciador;
 
 public class TelaRelatorios {
+
+    private final Gerenciador gerenciador;
+
+    public TelaRelatorios(Gerenciador gerenciador) {
+        this.gerenciador = gerenciador;
+    }
 
     public void exibir() {
         Scanner scanner = new Scanner(System.in);

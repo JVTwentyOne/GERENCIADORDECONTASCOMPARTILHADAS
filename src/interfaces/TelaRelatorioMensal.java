@@ -16,7 +16,7 @@ public class TelaRelatorioMensal {
 
             if (mes < 1 || mes > 12) {
                 System.out.println("Mês inválido! Por favor, insira um valor entre 1 e 12.");
-                exibir(); /
+                exibir(); 
                 return;
             }
 

@@ -19,16 +19,16 @@ public class TelaCadastro {
         System.out.println("Por favor, preencha os seguintes dados:");
 
         System.out.print("Nome de usuário: ");
-        String userName = scanner.nextLine();
+        String userName = scanner.nextLine().trim();
 
         System.out.print("E-mail: ");
-        String email = scanner.nextLine();
+        String email = scanner.nextLine().trim();
 
         System.out.print("Senha: ");
-        String password = scanner.nextLine();
+        String password = scanner.nextLine().trim();
 
         System.out.print("Telefone (opcional): ");
-        String phone = scanner.nextLine();
+        String phone = scanner.nextLine().trim();
 
         // Valida se o usuário ou e-mail já está cadastrado
         if (gerenciador.isUserExists(userName, email)) {
@@ -37,9 +37,12 @@ public class TelaCadastro {
         }
 
         // Registra o usuário no sistema
-        User newUser = new User(userName, email, password, phone);
-        gerenciador.registerUser(newUser);
-
-        System.out.println("Cadastro realizado com sucesso!");
+        try {
+            User newUser = new User(userName, email, password, phone);
+            gerenciador.registerUser(newUser);
+            System.out.println("Cadastro realizado com sucesso!");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro ao realizar o cadastro: " + e.getMessage());
+        }
     }
 }

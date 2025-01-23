@@ -1,6 +1,7 @@
 package interfaces;
 
 import java.util.Scanner;
+import entities.Gerenciador;
 
 public class TelaContas {
 
@@ -27,7 +28,8 @@ public class TelaContas {
 
             switch (opcao) {
                 case 1:
-                    TelaPagarConta telaPagarConta = new TelaPagarConta();
+                    // Agora passando o gerenciador para o construtor de TelaPagarConta
+                    TelaPagarConta telaPagarConta = new TelaPagarConta(gerenciador);
                     telaPagarConta.exibir();
                     break;
 

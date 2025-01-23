@@ -1,6 +1,8 @@
 package interfaces;
 
 import java.util.Scanner;
+import entities.Gerenciador;
+import entities.House;
 
 public class TelaPagarConta {
 

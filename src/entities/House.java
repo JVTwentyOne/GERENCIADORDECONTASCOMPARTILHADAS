@@ -3,7 +3,7 @@ package entities;
 import java.util.ArrayList;
 import java.util.List;
 
-class House {
+public class House {
     private List<Account> accounts;
     private List<User> users;
     private String nome;

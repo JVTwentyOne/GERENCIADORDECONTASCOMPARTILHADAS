@@ -1,3 +1,4 @@
+package entities;
 public class UserPayment {
     private final User user;
     private double amountDue;

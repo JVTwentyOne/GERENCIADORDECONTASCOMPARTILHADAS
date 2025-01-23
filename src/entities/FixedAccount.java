@@ -1,4 +1,5 @@
 // FixedAccount class
+package entities;
 class FixedAccount extends Account {
     public FixedAccount(String title, String description) {
         super(title, description);

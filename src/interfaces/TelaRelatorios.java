@@ -2,6 +2,7 @@ package interfaces;
 
 import java.util.Scanner;
 import entities.Gerenciador;
+import entities.House;
 
 public class TelaRelatorios {
 
@@ -23,27 +24,22 @@ public class TelaRelatorios {
         switch (opcao) {
             case 1:
                 System.out.println("Função para verificar contas pendentes ainda não implementada.");
-                scanner.close();
                 exibir();
                 break;
             case 2:
-                TelaRelatorioMensal telaRelatorioMensal = new TelaRelatorioMensal();
-                scanner.close();
+                TelaRelatorioMensal telaRelatorioMensal = new TelaRelatorioMensal(gerenciador);
                 telaRelatorioMensal.exibir();
                 break;
             case 3:
-                TelaHome telaHome = new TelaHome("Usuário"); // Passar nome do usuário real
-                scanner.close();
+                TelaHome telaHome = new TelaHome("Usuário", gerenciador); // Passar nome do usuário real
                 telaHome.exibir();
                 break;
             case 4:
                 System.out.println("Encerrando o programa.");
-                scanner.close();
                 System.exit(0);
                 break;
             default:
                 System.out.println("Opção inválida!");
-                scanner.close();
                 exibir();
         }
     }

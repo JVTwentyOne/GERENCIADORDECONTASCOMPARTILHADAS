@@ -1,8 +1,16 @@
 package interfaces;
 
 import java.util.Scanner;
+import entities.Gerenciador;
 
 public class TelaRelatorioMensal {
+
+    private final Gerenciador gerenciador;
+
+    // Correção do nome do construtor para TelaRelatorioMensal
+    public TelaRelatorioMensal(Gerenciador gerenciador) {
+        this.gerenciador = gerenciador;
+    }
 
     public void exibir() {
         Scanner scanner = new Scanner(System.in);
@@ -30,7 +38,8 @@ public class TelaRelatorioMensal {
             exibir(); 
         } finally {
             System.out.println("Retornando ao menu de relatórios...");
-            TelaRelatorios telaRelatorios = new TelaRelatorios();
+            // Corrigindo a criação da TelaRelatorios para usar o construtor correto
+            TelaRelatorios telaRelatorios = new TelaRelatorios(gerenciador); // Passando o gerenciador
             telaRelatorios.exibir();
         }
     }

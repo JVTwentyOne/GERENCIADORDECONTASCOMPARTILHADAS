@@ -25,7 +25,8 @@ public class TelaHome {
         int opcao = scanner.nextInt();
         switch (opcao) {
             case 1:
-                TelaRelatorios telaRelatorios = new TelaRelatorios();
+                // Passando o gerenciador para o construtor de TelaRelatorios
+                TelaRelatorios telaRelatorios = new TelaRelatorios(gerenciador);
                 telaRelatorios.exibir();
                 break;
             case 2:

@@ -1,11 +1,10 @@
 package entities;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Gerenciador {
-    private final List<House> houses;
+    private final List<House> houses; // Lista de casas (repúblicas)
     private static List<User> usuarios = new ArrayList<>();
     private static List<House> republicas = new ArrayList<>();
 
@@ -36,13 +35,18 @@ public class Gerenciador {
         this.houses.add(house);
     }
 
+    // Método para acessar a lista de casas (repúblicas)
+    public List<House> getHouses() {
+        return houses; // Retorna a lista de casas
+    }
+
     /**
      * Verifica se existe um usuário com o email/nome de usuário e senha fornecidos.
      * Agora retorna o nome do usuário se encontrar, ou null se não.
      *
      * @param emailOrUsername O email ou nome de usuário a ser verificado.
      * @param password        A senha a ser verificada.
-     * @return O nome de usuário se encontrado, ou null caso contrário.
+     * @return O nome do usuário se encontrado, ou null caso contrário.
      */
     public String authenticateUser(String emailOrUsername, String password) {
         if (emailOrUsername == null || password == null) {
@@ -55,7 +59,6 @@ public class Gerenciador {
                 return user.getName(); // Retorna o nome do usuário autenticado
             }
         }
-
 
         /*for (House house : houses) {
             for (User user : house.getUsers()) {
